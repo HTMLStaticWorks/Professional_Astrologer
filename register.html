@@ -1,7 +1,14 @@
-<html lang="en" dir="ltr" data-theme="dark">
+<html lang="en" dir="ltr" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    (() => {
+      const saved = localStorage.getItem('av_theme');
+      const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.setAttribute('data-theme', saved || (systemDark ? 'dark' : 'light'));
+    })();
+  </script>
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
   <title>Create Account | AstroVeda â€” Start Your Cosmic Journey</title>
   <meta name="description" content="Create your free AstroVeda account and start your personalized astrology journey today.">
@@ -20,24 +27,24 @@
     <div class="auth-card reveal-up" style="max-width:520px;">
       <!-- Brand -->
       <div class="text-center mb-5">
-        <a href="index.html" class="text-decoration-none d-inline-block mb-4">
+        <a href="index.html" class="auth-brand text-decoration-none d-inline-block mb-4">
           <span class="h-font fw-bold text-accent" style="font-size:2rem; letter-spacing:-.03em;">
             <i class="bi bi-stars" aria-hidden="true"></i> AstroVeda
           </span>
         </a>
-        <h1 class="h3 h-font text-white mb-2">Create Your Account</h1>
-        <p style="color:rgba(255,255,255,.5); font-size:.9rem;">Free forever. No credit card required.</p>
+        <h1 class="h3 h-font auth-title mb-2">Create Your Account</h1>
+        <p class="auth-subtitle" style="font-size:.9rem;">Free forever. No credit card required.</p>
       </div>
 
       <!-- Benefits strip -->
       <div class="d-flex flex-wrap gap-3 justify-content-center mb-5">
-        <span style="background:rgba(201,169,110,.12); border:1px solid rgba(201,169,110,.2); border-radius:99px; padding:5px 14px; font-size:.78rem; color:rgba(255,255,255,.7);">
+        <span class="auth-benefit-pill">
           <i class="bi bi-check-circle text-accent me-1" aria-hidden="true"></i> Free Birth Chart Preview
         </span>
-        <span style="background:rgba(201,169,110,.12); border:1px solid rgba(201,169,110,.2); border-radius:99px; padding:5px 14px; font-size:.78rem; color:rgba(255,255,255,.7);">
+        <span class="auth-benefit-pill">
           <i class="bi bi-check-circle text-accent me-1" aria-hidden="true"></i> Dashboard Access
         </span>
-        <span style="background:rgba(201,169,110,.12); border:1px solid rgba(201,169,110,.2); border-radius:99px; padding:5px 14px; font-size:.78rem; color:rgba(255,255,255,.7);">
+        <span class="auth-benefit-pill">
           <i class="bi bi-check-circle text-accent me-1" aria-hidden="true"></i> Secure &amp; Private
         </span>
       </div>
@@ -45,42 +52,42 @@
       <!-- Form -->
       <form id="reg-form" onsubmit="handleRegister(event);" novalidate>
         <div class="mb-4">
-          <label for="r-name" class="form-label small fw-semibold" style="color:rgba(255,255,255,.7);">Full Name</label>
+          <label for="r-name" class="form-label small fw-semibold auth-label">Full Name</label>
           <input id="r-name" type="text" class="form-field" placeholder="Jane Doe" autocomplete="name" required
-                 style="color:#fff;" aria-required="true">
+                 aria-required="true">
         </div>
 
         <div class="mb-4">
-          <label for="r-email" class="form-label small fw-semibold" style="color:rgba(255,255,255,.7);">Email Address</label>
+          <label for="r-email" class="form-label small fw-semibold auth-label">Email Address</label>
           <input id="r-email" type="email" class="form-field" placeholder="you@example.com" autocomplete="email" required
-                 style="color:#fff;" aria-required="true">
+                 aria-required="true">
         </div>
 
         <div class="mb-4">
-          <label for="r-password" class="form-label small fw-semibold" style="color:rgba(255,255,255,.7);">Password</label>
+          <label for="r-password" class="form-label small fw-semibold auth-label">Password</label>
           <div class="position-relative">
             <input id="r-password" type="password" class="form-field" placeholder="At least 8 characters" required
-                   style="color:#fff; padding-inline-end:46px;" aria-required="true" oninput="checkStrength(this.value)">
+                   style="padding-inline-end:46px;" aria-required="true" oninput="checkStrength(this.value)">
             <button type="button" onclick="togglePwd('r-password','eye-reg')"
-                    class="position-absolute top-50 translate-middle-y end-0 me-3 border-0 bg-transparent p-0"
-                    style="color:rgba(255,255,255,.4); cursor:pointer;" aria-label="Show or hide password">
+                    class="position-absolute top-50 translate-middle-y end-0 me-3 border-0 bg-transparent p-0 auth-input-toggle"
+                    style="cursor:pointer;" aria-label="Show or hide password">
               <i id="eye-reg" class="bi bi-eye" aria-hidden="true"></i>
             </button>
           </div>
           <!-- Strength bar -->
           <div class="mt-2 d-flex gap-1" aria-label="Password strength indicator">
-            <div id="s1" style="height:4px; flex:1; border-radius:2px; background:rgba(255,255,255,.1); transition:.3s;"></div>
-            <div id="s2" style="height:4px; flex:1; border-radius:2px; background:rgba(255,255,255,.1); transition:.3s;"></div>
-            <div id="s3" style="height:4px; flex:1; border-radius:2px; background:rgba(255,255,255,.1); transition:.3s;"></div>
-            <div id="s4" style="height:4px; flex:1; border-radius:2px; background:rgba(255,255,255,.1); transition:.3s;"></div>
+            <div id="s1" class="auth-strength-bar"></div>
+            <div id="s2" class="auth-strength-bar"></div>
+            <div id="s3" class="auth-strength-bar"></div>
+            <div id="s4" class="auth-strength-bar"></div>
           </div>
-          <p id="strength-label" class="small mt-1" style="color:rgba(255,255,255,.35); font-size:.75rem; min-height:18px;"></p>
+          <p id="strength-label" class="small mt-1 auth-strength-label" style="font-size:.75rem; min-height:18px;"></p>
         </div>
 
         <div class="mb-5">
           <div class="form-check">
             <input class="form-check-input" type="checkbox" id="r-terms" required aria-required="true">
-            <label class="form-check-label" for="r-terms" style="font-size:.85rem; color:rgba(255,255,255,.6);">
+            <label class="form-check-label auth-check-label" for="r-terms" style="font-size:.85rem;">
               I agree to the <a href="#" class="text-accent text-decoration-none">Terms of Service</a> and
               <a href="#" class="text-accent text-decoration-none">Privacy Policy</a>
             </label>
@@ -92,7 +99,7 @@
         </button>
       </form>
 
-      <p class="text-center mt-5 mb-0" style="color:rgba(255,255,255,.45); font-size:.87rem;">
+      <p class="text-center mt-5 mb-0 auth-footer-note" style="font-size:.87rem;">
         Already have an account?
         <a href="login.html" class="text-accent text-decoration-none fw-semibold">Sign In</a>
       </p>
@@ -116,16 +123,19 @@
     const label = document.getElementById('strength-label');
     const colors = ['#ef4444','#f97316','#eab308','#22c55e'];
     const labels = ['Too weak','Fair','Good','Strong âœ¦'];
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    const baseBar = isDark ? 'rgba(255,255,255,.1)' : 'rgba(15,23,42,.12)';
+    const baseLabel = isDark ? 'rgba(255,255,255,.35)' : '#6b7280';
     let score = 0;
     if (val.length >= 8)         score++;
     if (/[A-Z]/.test(val))       score++;
     if (/[0-9]/.test(val))       score++;
     if (/[^A-Za-z0-9]/.test(val)) score++;
     s.forEach((el, i) => {
-      el.style.background = i < score ? colors[score - 1] : 'rgba(255,255,255,.1)';
+      el.style.background = i < score ? colors[score - 1] : baseBar;
     });
     label.textContent   = val ? labels[score - 1] || '' : '';
-    label.style.color   = val && score > 0 ? colors[score - 1] : 'rgba(255,255,255,.35)';
+    label.style.color   = val && score > 0 ? colors[score - 1] : baseLabel;
   }
 
   function handleRegister(e) {

@@ -128,9 +128,9 @@ img { max-width: 100%; display: block; }
   inset-inline: 0;
   width: 100%;
   height: var(--nav-h);
-  background: var(--nav-bg);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: var(--bg);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
   border-bottom: 1px solid rgba(201,169,110,.12);
   z-index: 999;
   transition: background var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
@@ -255,6 +255,10 @@ img { max-width: 100%; display: block; }
 }
 .btn-ghost:hover { background: var(--accent); color: #fff; }
 
+[data-theme="light"] #live-consultation .col-lg-7 .text-muted {
+  color: #334155 !important;
+}
+
 /* ─── CARDS ─────────────────────────────────── */
 .card-astro {
   background: var(--card-bg);
@@ -277,6 +281,16 @@ img { max-width: 100%; display: block; }
 .card-astro:hover { transform: translateY(-8px); box-shadow: 0 24px 48px rgba(0,0,0,.12); border-color: rgba(201,169,110,.35); }
 .card-astro:hover::before { opacity: 1; }
 [data-theme="dark"] .card-astro:hover { box-shadow: 0 24px 48px rgba(0,0,0,.45); }
+
+.section-pad[aria-labelledby="services-heading"] .card-astro {
+  display: flex;
+  flex-direction: column;
+}
+
+.section-pad[aria-labelledby="services-heading"] .card-astro .btn-ghost {
+  margin-top: auto;
+  align-self: center;
+}
 
 .hero-section {
   min-height: calc(100vh - var(--nav-h));
@@ -341,6 +355,25 @@ img { max-width: 100%; display: block; }
   max-width: 520px;
   margin-bottom: 40px;
   line-height: 1.7;
+}
+
+[data-theme="light"] .hero-section-2 .hero-title {
+  color: #0f172a;
+}
+
+[data-theme="light"] .hero-section-2 .hero-tagline {
+  color: #8a6a2f;
+  border-color: rgba(138, 106, 47, .45);
+  background: rgba(255, 255, 255, .72);
+}
+
+[data-theme="light"] .hero-section-2 .hero-subtitle {
+  color: #334155;
+}
+
+[data-theme="light"] .hero-section-2 .btn-ghost {
+  color: #334155;
+  border-color: rgba(51, 65, 85, .45);
 }
 
 /* Zodiac SVG Wheel */
@@ -451,6 +484,11 @@ img { max-width: 100%; display: block; }
   transition: background .3s, transform .3s;
 }
 .card-astro:hover .svc-icon { background: var(--accent); color: #fff; transform: rotate(6deg) scale(1.1); }
+.specialities-section .card-astro:hover .svc-icon {
+  background: var(--accent) !important;
+  color: #0b0f14 !important;
+  border-color: rgba(11, 15, 20, .18) !important;
+}
 
 /* ─── TESTIMONIAL CARD ──────────────────────── */
 .testi-card {
@@ -525,6 +563,11 @@ img { max-width: 100%; display: block; }
 }
 
 /* ─── FOOTER ────────────────────────────────── */
+.cosmic-cta-actions > a {
+  width: 290px;
+  justify-content: center;
+}
+
 .footer-main {
   background: var(--primary);
   color: rgba(255,255,255,.85);
@@ -532,10 +575,14 @@ img { max-width: 100%; display: block; }
 }
 .footer-brand {
   font-family: var(--font-h);
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 800;
+  letter-spacing: -.03em;
   color: var(--accent);
   margin-bottom: 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: .15em;
 }
 .footer-desc { font-size: .9rem; opacity: .65; line-height: 1.7; max-width: 300px; }
 .footer-heading { font-size: .75rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; }
@@ -611,10 +658,10 @@ select.form-field option { background: var(--card-bg); color: var(--text); }
   width: 268px;
   flex-shrink: 0;
   background: var(--secondary);
-  border-inline-start: 1px solid rgba(255,255,255,.07);
+  border-inline-end: 1px solid rgba(255,255,255,.07);
   position: fixed;
   inset-block: 0;
-  inset-inline-end: 0;
+  inset-inline-start: 0;
   overflow-y: auto;
   z-index: 1050;
   display: flex;
@@ -655,7 +702,7 @@ select.form-field option { background: var(--card-bg); color: var(--text); }
 .dash-nav-link.active i { color: var(--accent); }
 
 .dash-main {
-  margin-inline-end: 268px;
+  margin-inline-start: 268px;
   flex: 1;
   min-width: 0;
   padding: 36px 40px;
@@ -705,17 +752,21 @@ select.form-field option { background: var(--card-bg); color: var(--text); }
   height: 100%;
 }
 .dash-card h5 { font-size: 1.08rem; margin-bottom: 20px; }
+[data-tab="reports"] .report-action-btn {
+  width: 136px;
+  justify-content: center;
+}
 
 /* sidebar mobile */
 @media (max-width: 992px) {
   .dash-sidebar {
-    transform: translateX(100%);
+    transform: translateX(-100%);
   }
   .dash-sidebar.open {
     transform: translateX(0);
   }
   .dash-main {
-    margin-inline-end: 0;
+    margin-inline-start: 0;
     padding: 24px 20px;
   }
 }
@@ -851,6 +902,10 @@ select.form-field option { background: var(--card-bg); color: var(--text); }
 
 .card-glass:hover::after { opacity: 1; }
 
+.glass-section .card-glass {
+  color: #fff;
+}
+
 .glass-icon {
   font-size: 2.5rem;
   color: var(--accent);
@@ -863,10 +918,12 @@ select.form-field option { background: var(--card-bg); color: var(--text); }
   font-size: 1.5rem;
   margin-bottom: 16px;
   font-weight: 700;
+  color: #fff;
 }
 
 .glass-text {
   font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.85);
   opacity: 0.8;
   line-height: 1.6;
 }
@@ -905,17 +962,31 @@ select.form-field option { background: var(--card-bg); color: var(--text); }
   color: var(--accent);
 }
 .svc-radio { display: none; }
+.booking-services-grid > [class*="col-"] {
+  display: flex;
+}
 .svc-label {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
   padding: 18px;
   border: 1px solid var(--input-border);
   border-radius: var(--radius-sm);
   cursor: pointer;
   transition: border-color .25s, background .25s;
 }
+.booking-services-grid .svc-label > span.text-accent {
+  margin-top: auto;
+}
 .svc-radio:checked + .svc-label {
   border-color: var(--accent);
   background: var(--accent-dim);
+}
+
+.booking-confirm-btn {
+  white-space: nowrap;
+  flex: 0 0 auto;
 }
 
 @media (max-width: 768px) {
@@ -928,18 +999,44 @@ select.form-field option { background: var(--card-bg); color: var(--text); }
 .auth-wrap {
   min-height: 100dvh;
   display: flex;
-  align-items: center;
-  background: var(--primary);
+  align-items: flex-start;
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 32px 0;
+  background: linear-gradient(180deg, var(--bg) 0%, var(--bg-alt) 100%);
+  transition: background var(--dur) var(--ease);
+}
+[data-theme="light"] .auth-wrap {
+  scrollbar-gutter: stable;
+}
+[data-theme="dark"] .auth-wrap {
+  background: var(--primary);
+}
+.auth-wrap > .container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  min-height: calc(100dvh - 64px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 64px;
+  padding-bottom: 24px;
 }
 .auth-theme-toggle {
   position: absolute;
   top: 24px;
   inset-inline-end: 24px;
   z-index: 2;
+  background: var(--card-bg);
+  border-color: var(--card-border);
+  color: var(--text-muted);
+}
+[data-theme="dark"] .auth-theme-toggle {
+  background: rgba(255,255,255,.03);
   border-color: rgba(255,255,255,.15);
-  color: rgba(255,255,255,.5);
+  color: rgba(255,255,255,.55);
 }
 .auth-wrap::before {
   content: '';
@@ -951,17 +1048,118 @@ select.form-field option { background: var(--card-bg); color: var(--text); }
   background: radial-gradient(circle, rgba(201,169,110,.08) 0%, transparent 70%);
 }
 .auth-card {
-  background: rgba(26,38,52,.7);
-  border: 1px solid rgba(201,169,110,.15);
+  background: rgba(255,255,255,.92);
+  border: 1px solid rgba(201,169,110,.18);
   border-radius: var(--radius);
   padding: 52px 48px;
   backdrop-filter: blur(12px);
   width: 100%;
   max-width: 460px;
   margin: 0 auto;
+  color: var(--text);
+  box-shadow: 0 24px 60px rgba(15,23,42,.12);
+}
+[data-theme="dark"] .auth-card {
+  background: rgba(26,38,52,.7);
+  border-color: rgba(201,169,110,.15);
+  color: #fff;
+  box-shadow: 0 24px 60px rgba(0,0,0,.3);
+}
+.auth-title {
+  color: var(--text);
+}
+.auth-card a {
+  transition: color .25s, text-decoration-color .25s, opacity .25s, filter .25s;
+}
+.auth-card a:not(.auth-brand):hover {
+  color: var(--accent) !important;
+  text-decoration: underline !important;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1.5px;
+}
+.auth-subtitle,
+.auth-label,
+.auth-check-label,
+.auth-divider-text,
+.auth-footer-note,
+.auth-strength-label {
+  color: var(--text-muted) !important;
+}
+[data-theme="dark"] .auth-title {
   color: #fff;
 }
+[data-theme="dark"] .auth-subtitle,
+[data-theme="dark"] .auth-label,
+[data-theme="dark"] .auth-check-label,
+[data-theme="dark"] .auth-divider-text,
+[data-theme="dark"] .auth-footer-note,
+[data-theme="dark"] .auth-strength-label {
+  color: rgba(255,255,255,.55) !important;
+}
+.auth-card .form-field {
+  color: var(--text) !important;
+}
+[data-theme="dark"] .auth-card .form-field {
+  color: #fff !important;
+}
+.auth-input-toggle {
+  color: var(--text-muted);
+}
+[data-theme="dark"] .auth-input-toggle {
+  color: rgba(255,255,255,.4);
+}
+.auth-divider {
+  border-color: rgba(15,23,42,.12);
+}
+[data-theme="dark"] .auth-divider {
+  border-color: rgba(255,255,255,.1);
+}
+.auth-social-btn {
+  border-color: var(--card-border) !important;
+  color: var(--text);
+  background: transparent;
+  font-size: .85rem;
+  cursor: pointer;
+  transition: border-color .25s, color .25s, background .25s;
+}
+.auth-social-btn:hover {
+  border-color: var(--accent) !important;
+  background: var(--accent-dim);
+}
+[data-theme="dark"] .auth-social-btn {
+  border-color: rgba(255,255,255,.15) !important;
+  color: #fff;
+}
+.auth-benefit-pill {
+  background: rgba(201,169,110,.12);
+  border: 1px solid rgba(201,169,110,.2);
+  border-radius: 99px;
+  padding: 5px 14px;
+  font-size: .78rem;
+  color: var(--text-muted);
+}
+[data-theme="dark"] .auth-benefit-pill {
+  color: rgba(255,255,255,.7);
+}
+.auth-strength-bar {
+  height: 4px;
+  flex: 1;
+  border-radius: 2px;
+  background: rgba(15,23,42,.12);
+  transition: .3s;
+}
+[data-theme="dark"] .auth-strength-bar {
+  background: rgba(255,255,255,.1);
+}
 @media (max-width: 480px) {
+  .auth-wrap {
+    padding: 20px 0 24px;
+  }
+  .auth-wrap > .container {
+    min-height: calc(100dvh - 44px);
+    padding-top: 56px;
+    padding-bottom: 20px;
+  }
   .auth-theme-toggle {
     top: 18px;
     inset-inline-end: 18px;
@@ -1009,7 +1207,124 @@ select.form-field option { background: var(--card-bg); color: var(--text); }
   .zodiac-wrap  { width: 280px; }
 }
 
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .hero-section .row > .col-lg-6:first-child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-section .hero-subtitle {
+    margin-inline: auto;
+  }
+
+  .section-pad[aria-labelledby="testi-heading"] .row {
+    justify-content: center;
+  }
+
+  .section-pad[aria-labelledby="testi-heading"] .row > [class*="col-"] {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
 @media (max-width: 991.98px) {
+  .astral-legacy .col-lg-6:first-child > .reveal-up > .eyebrow {
+    display: block;
+    text-align: center;
+  }
+
+  .astral-legacy .col-lg-6:first-child > .reveal-up > h2 {
+    text-align: center;
+  }
+
+  .astral-legacy .col-lg-6:first-child > .reveal-up > a.btn-gold {
+    display: block;
+    width: max-content;
+    margin-inline: auto;
+  }
+
+  .section-pad .row.align-items-center.g-5.flex-lg-row-reverse > .col-lg-7 > .eyebrow {
+    display: block;
+    text-align: center;
+  }
+
+  .section-pad .row.align-items-center.g-5.flex-lg-row-reverse > .col-lg-7 > h2 {
+    text-align: center;
+  }
+
+  .section-pad .row.align-items-center.g-5.flex-lg-row-reverse > .col-lg-7 > a.btn-ghost {
+    display: flex;
+    width: max-content;
+    margin-inline: auto;
+  }
+
+  #birth-chart .col-lg-6:last-child .eyebrow,
+  #compatibility .col-lg-6:last-child .eyebrow,
+  #horoscope .col-lg-6:last-child .eyebrow,
+  #live-consultation .col-lg-7 .eyebrow {
+    display: block;
+    text-align: center;
+  }
+
+  #birth-chart .col-lg-6:last-child h2,
+  #compatibility .col-lg-6:last-child h2,
+  #horoscope .col-lg-6:last-child h2,
+  #live-consultation .col-lg-7 h2 {
+    text-align: center;
+  }
+
+  #birth-chart .col-lg-6:last-child > .d-flex,
+  #compatibility .col-lg-6:last-child > .d-flex,
+  #horoscope .col-lg-6:last-child > .d-flex,
+  #live-consultation .col-lg-7 > .d-flex {
+    justify-content: center;
+  }
+
+  .inquiry-section .col-lg-4.reveal-up {
+    text-align: center;
+  }
+
+  .inquiry-section .col-lg-4.reveal-up .eyebrow {
+    display: block;
+  }
+
+  .inquiry-section .col-lg-4.reveal-up .btn-ghost {
+    display: inline-flex;
+    width: max-content;
+    margin-inline: auto;
+  }
+
+  .about-bio-section .col-lg-7 > a.btn-gold {
+    display: flex;
+    width: max-content;
+    margin-inline: auto;
+  }
+
+  .about-bio-section .col-lg-7 > .eyebrow {
+    display: block;
+    text-align: center;
+  }
+
+  .about-bio-section .col-lg-7 > h2 {
+    text-align: center;
+  }
+
+  .elemental-section .col-lg-5.reveal-up {
+    text-align: center;
+  }
+
+  .elemental-section .col-lg-5.reveal-up .eyebrow {
+    display: block;
+  }
+
+  .elemental-section .col-lg-5.reveal-up .btn-ghost {
+    display: block;
+    width: max-content;
+    margin-inline: auto;
+  }
+
   .footer-main .row > [class*="col-"] {
     width: 100%;
     max-width: 100%;
@@ -1034,9 +1349,31 @@ select.form-field option { background: var(--card-bg); color: var(--text); }
   }
 }
 
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .elemental-section .col-lg-7 > .row.g-3 {
+    max-width: 680px;
+    margin-inline: auto;
+  }
+}
+
 @media (max-width: 576px) {
   .nav-astro .navbar-brand { font-size: 1.3rem; }
   .btn-gold, .btn-ghost   { padding: 11px 22px; font-size: .84rem; }
+  .hero-section .col-lg-6:last-child .zodiac-wrap {
+    margin-bottom: 40px;
+  }
+  .hero-section .col-lg-6:first-child > .d-flex > a {
+    width: 220px;
+    max-width: 100%;
+    flex: 0 1 220px;
+    justify-content: center;
+  }
+  .cta-band .d-flex.flex-wrap.gap-3.justify-content-center > a {
+    width: 220px;
+    max-width: 100%;
+    flex: 0 1 220px;
+    justify-content: center;
+  }
   .stat-item .stat-num    { font-size: 1.8rem; }
   .footer-main .row > [class*="col-"] {
     width: 100%;
@@ -1059,6 +1396,12 @@ select.form-field option { background: var(--card-bg); color: var(--text); }
     width: 100%;
     max-width: 360px;
     margin-inline: auto;
+  }
+  .booking-confirm-btn {
+    padding: 11px 12px !important;
+    font-size: .72rem !important;
+    letter-spacing: .03em !important;
+    gap: 4px !important;
   }
 }
 
@@ -1107,7 +1450,14 @@ select.form-field option { background: var(--card-bg); color: var(--text); }
   padding: 32px;
   border-radius: 24px;
   text-align: center;
+  height: 100%;
   transition: all .4s var(--ease);
+}
+.prep-section .row.g-4 > [class*="col-"] {
+  display: flex;
+}
+.prep-section .prep-card {
+  flex: 1;
 }
 .prep-card:hover {
   border-color: var(--accent);
@@ -1211,8 +1561,20 @@ select.form-field option { background: var(--card-bg); color: var(--text); }
 }
 /* ─── END UNIQUE SECTIONS ───────────────────── */
 /* ─── ACCORDION THEMING ─────────────────────── */
-@media (min-width: 768px) and (max-width: 991.98px) {
-  .ethereal-lab-copy { margin-right: auto; }
+@media (max-width: 991.98px) {
+  .ethereal-section .ethereal-lab-copy {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+  .ethereal-section .ethereal-lab-copy .btn-gold {
+    display: block;
+    width: max-content;
+    margin: 0 auto;
+  }
+  .transits-section .reveal-up {
+    text-align: center;
+  }
 }
 .accordion-button:not(.collapsed) {
   background: var(--bg-alt);
@@ -1278,6 +1640,13 @@ select.form-field option { background: var(--card-bg); color: var(--text); }
   .offcanvas-header { border-bottom: none !important; padding: 25px 30px; position: absolute; top: 0; width: 100%; z-index: 10; }
   .offcanvas-header .offcanvas-title { font-size: 1.6rem; }
   .offcanvas-body .d-flex { align-items: flex-start !important; width: 100%; }
+  .offcanvas-body > .d-flex.flex-column.flex-lg-row {
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+  .offcanvas-body > .d-flex.flex-column.flex-lg-row > a.btn-gold {
+    width: 100%;
+  }
 }
 
 @media (max-width: 576px) {
@@ -1307,6 +1676,23 @@ select.form-field option { background: var(--card-bg); color: var(--text); }
     padding: 20px !important;
     align-items: center; /* Center the centered content */
   }
-  .upcoming-box .btn-gold { width: auto; padding: 10px 24px; }
+.upcoming-box .btn-gold { width: auto; padding: 10px 24px; }
+}
+
+@media (max-width: 991.98px) {
+  .hero-section-2 .hero-2-actions {
+    width: min(100%, 320px);
+    margin-inline: auto;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .hero-section-2 .hero-2-actions > a.btn-gold,
+  .hero-section-2 .hero-2-actions > a.btn-ghost {
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 auto !important;
+    justify-content: center !important;
+  }
 }
 /* ─── END RESPONSIVE FIXES ─────────────────── */
