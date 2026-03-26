@@ -1,0 +1,77 @@
+/* ================================================
+   ASTROVEDA – RTL STYLESHEET
+   Applied when <html dir="rtl">
+   Uses only logical CSS properties throughout
+   ================================================ */
+
+/* Flip shimmer direction on buttons */
+[dir="rtl"] .btn-gold::before {
+  background: linear-gradient(240deg, transparent 30%, rgba(255,255,255,.32) 50%, transparent 70%);
+  transform: translateX(120%);
+}
+[dir="rtl"] .btn-gold:hover::before {
+  transform: translateX(-120%);
+}
+
+/* Nav link underline originates from inline-end in RTL */
+[dir="rtl"] .nav-astro .nav-link::after {
+  transform-origin: center;
+}
+
+/* Sidebar flip for the dashboard */
+[dir="rtl"] .dash-sidebar {
+  inset-inline-start: auto;
+  inset-inline-end: 0;
+  border-inline-end: none;
+  border-inline-start: 1px solid rgba(255,255,255,.07);
+}
+[dir="rtl"] .dash-main {
+  margin-inline-start: 0;
+  margin-inline-end: 268px;
+}
+@media (max-width: 992px) {
+  [dir="rtl"] .dash-sidebar {
+    transform: translateX(100%);
+  }
+  [dir="rtl"] .dash-sidebar.open {
+    transform: translateX(0);
+  }
+  [dir="rtl"] .dash-main {
+    margin-inline-end: 0;
+  }
+}
+
+/* Chat alignment */
+[dir="rtl"] .msg-sent {
+  text-align: start;
+  margin-inline-end: 0;
+  margin-inline-start: auto;
+}
+[dir="rtl"] .msg-received {
+  text-align: start;
+  margin-inline-start: 0;
+  margin-inline-end: auto;
+}
+
+/* Footer */
+[dir="rtl"] .footer-desc { margin-inline-end: 0; margin-inline-start: auto; }
+
+/* Tables: ensure horizontal scrolling direction */
+[dir="rtl"] .table-responsive { direction: rtl; }
+
+/* Booking aside */
+[dir="rtl"] .booking-layout {
+  grid-template-columns: 1fr 300px;
+}
+[dir="rtl"] .booking-aside { order: 2; }
+[dir="rtl"] .booking-body  { order: 1; }
+
+/* Contact border that appears on inline-start */
+[dir="rtl"] .contact-info-line {
+  border-inline-start: none;
+  border-inline-end: 4px solid var(--accent);
+  padding-inline-end: 16px;
+  padding-inline-start: 0;
+}
+
+/* Scrollbar stays on inline-end always */

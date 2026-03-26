@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <title>User Dashboard | AstroVeda</title>
+  <meta name="description" content="Manage your astrology reports, bookings, messages, and profile in your AstroVeda dashboard.">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+<body>
+
+<div class="dash-wrap">
+
+  <!-- ══════════ SIDEBAR ══════════ -->
+  <aside class="dash-sidebar" id="dash-sidebar" role="navigation" aria-label="Dashboard navigation">
+    <a href="index.html" class="brand" style="text-decoration:none;">
+      <i class="bi bi-stars text-accent" aria-hidden="true"></i> AstroVeda
+    </a>
+
+    <nav>
+      <button class="dash-nav-link active" data-target="overview"  onclick="avShowTab('overview')"  aria-label="Dashboard overview">
+        <i class="bi bi-grid-fill" aria-hidden="true"></i> Dashboard
+      </button>
+      <button class="dash-nav-link" data-target="profile"   onclick="avShowTab('profile')"   aria-label="My Profile">
+        <i class="bi bi-person-fill" aria-hidden="true"></i> My Profile
+      </button>
+      <button class="dash-nav-link" data-target="reports"   onclick="avShowTab('reports')"   aria-label="My Reports">
+        <i class="bi bi-file-earmark-pdf-fill" aria-hidden="true"></i> My Reports
+      </button>
+      <button class="dash-nav-link" data-target="bookings"  onclick="avShowTab('bookings')"  aria-label="Bookings">
+        <i class="bi bi-calendar-check-fill" aria-hidden="true"></i> Bookings
+      </button>
+      <button class="dash-nav-link" data-target="history"   onclick="avShowTab('history')"   aria-label="Chart History">
+        <i class="bi bi-clock-history" aria-hidden="true"></i> Chart History
+      </button>
+      <button class="dash-nav-link" data-target="downloads" onclick="avShowTab('downloads')" aria-label="Downloads">
+        <i class="bi bi-cloud-arrow-down-fill" aria-hidden="true"></i> Downloads
+      </button>
+      <button class="dash-nav-link" data-target="messages"  onclick="avShowTab('messages')"  aria-label="Messages">
+        <i class="bi bi-chat-dots-fill" aria-hidden="true"></i> Messages
+        <span class="badge bg-accent ms-auto" style="background:var(--accent); font-size:.65rem;">2</span>
+      </button>
+      <button class="dash-nav-link" data-target="payments"  onclick="avShowTab('payments')"  aria-label="Payments">
+        <i class="bi bi-credit-card-fill" aria-hidden="true"></i> Payments
+      </button>
+    </nav>
+
+    <div style="margin-top:auto; padding-top:32px;">
+      <hr style="border-color:rgba(255,255,255,.08);">
+      <a href="index.html" class="dash-nav-link" style="color:rgba(255,80,80,.65);">
+        <i class="bi bi-box-arrow-left" aria-hidden="true"></i> Log Out
+      </a>
+    </div>
+  </aside>
+
+  <!-- ══════════ MAIN ══════════ -->
+  <main class="dash-main" id="dash-main">
+
+    <!-- Top Bar -->
+    <header class="dash-topbar">
+      <h2 class="h-font mb-0" id="dash-title">Welcome Back ✦</h2>
+      <div class="d-flex align-items-center gap-3">
+        <button class="icon-btn d-lg-none" onclick="avToggleSidebar()" aria-label="Open Sidebar">
+          <i class="bi bi-list fs-4" aria-hidden="true"></i>
+        </button>
+        <button id="theme-toggle" class="icon-btn" aria-label="Toggle dark mode">
+          <i class="bi bi-moon-stars-fill" aria-hidden="true"></i>
+        </button>
+        <div class="dropdown">
+          <img src="https://ui-avatars.com/api/?name=John+Doe&background=C9A96E&color=fff&size=80"
+               alt="John Doe"
+               class="rounded-circle"
+               width="40" height="40"
+               style="cursor:pointer; border:2px solid var(--accent);"
+               data-bs-toggle="dropdown"
+               aria-expanded="false"
+               aria-haspopup="true">
+          <ul class="dropdown-menu dropdown-menu-end shadow-lg">
+            <li><a class="dropdown-item" href="#" onclick="avShowTab('profile')"><i class="bi bi-person me-2"></i>My Profile</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item text-danger" href="index.html"><i class="bi bi-box-arrow-left me-2"></i>Log Out</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <!-- ══ TAB: OVERVIEW ══ -->
+    <div data-tab="overview">
+      <!-- KPI Cards -->
+      <div class="row g-3 mb-4">
+        <div class="col-6 col-lg-3">
+          <div class="kpi-card">
+            <div class="kpi-icon"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i></div>
+            <div>
+              <div class="kpi-num" data-count="12" data-suffix="">12</div>
+              <div class="kpi-label">Reports</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="kpi-card">
+            <div class="kpi-icon" style="background:rgba(59,130,246,.15); color:#3b82f6;">
+              <i class="bi bi-calendar-check" aria-hidden="true"></i>
+            </div>
+            <div>
+              <div class="kpi-num">2</div>
+              <div class="kpi-label">Upcoming</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="kpi-card">
+            <div class="kpi-icon" style="background:rgba(34,197,94,.12); color:#22c55e;">
+              <i class="bi bi-camera-video" aria-hidden="true"></i>
+            </div>
+            <div>
+              <div class="kpi-num">8</div>
+              <div class="kpi-label">Consultations</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="kpi-card">
+            <div class="kpi-icon" style="background:rgba(168,85,247,.12); color:#a855f7;">
+              <i class="bi bi-chat-dots" aria-hidden="true"></i>
+            </div>
+            <div>
+              <div class="kpi-num">2</div>
+              <div class="kpi-label">Unread Msgs</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <!-- Upcoming Session -->
+        <div class="col-lg-8">
+          <div class="dash-card">
+            <h5 class="h-font">Upcoming Session</h5>
+            <div class="d-flex align-items-center gap-4 p-4 rounded-3 upcoming-box" style="background:var(--bg-alt); border:1px solid var(--card-border);">
+              <div class="text-center p-3 rounded-3 text-white fw-bold" style="background:var(--accent); min-width:76px;">
+                <div style="font-size:1.8rem; font-family:var(--font-h);">28</div>
+                <div style="font-size:.75rem; opacity:.85;">MAR 2026</div>
+              </div>
+              <div class="flex-grow-1">
+                <h6 class="h-font mb-1">Career Path Consultation</h6>
+                <p class="small text-muted mb-0"><i class="bi bi-clock me-1" aria-hidden="true"></i>15:30 IST (GMT +5:30) · Zoom</p>
+              </div>
+              <a href="#" class="btn-gold" style="text-decoration:none; font-size:.82rem; padding:10px 20px;">Join <i class="bi bi-arrow-up-right-circle ms-1" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="col-lg-4">
+          <div class="dash-card">
+            <h5 class="h-font">Quick Actions</h5>
+            <a href="book-consultation.html" class="d-flex align-items-center gap-3 p-3 rounded-3 mb-2 text-decoration-none"
+               style="border:1px solid var(--card-border); transition:.25s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--card-border)'">
+              <i class="bi bi-plus-circle-fill text-accent" aria-hidden="true"></i>
+              <span style="font-size:.9rem;">Book New Session</span>
+            </a>
+            <a href="services.html" class="d-flex align-items-center gap-3 p-3 rounded-3 mb-2 text-decoration-none"
+               style="border:1px solid var(--card-border); transition:.25s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--card-border)'">
+              <i class="bi bi-bag-plus-fill text-accent" aria-hidden="true"></i>
+              <span style="font-size:.9rem;">Purchase Report</span>
+            </a>
+            <button onclick="avShowTab('messages')" class="d-flex align-items-center gap-3 p-3 rounded-3 w-100 border bg-transparent text-start"
+               style="border-color:var(--card-border)!important; color:var(--text); font-size:.9rem; transition:.25s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--card-border)'">
+              <i class="bi bi-chat-dots-fill text-accent" aria-hidden="true"></i>
+              Message Astrologer
+            </button>
+          </div>
+        </div>
+
+        <!-- Recent Reports -->
+        <div class="col-12">
+          <div class="dash-card">
+            <h5 class="h-font mb-4">Recent Reports</h5>
+            <div class="table-responsive">
+              <table class="table mb-0" style="color:var(--text);">
+                <thead style="font-size:.8rem; text-transform:uppercase; letter-spacing:.08em; opacity:.5;">
+                  <tr>
+                    <th style="font-weight:600; border-bottom:1px solid var(--card-border);">Report</th>
+                    <th style="font-weight:600; border-bottom:1px solid var(--card-border);">Type</th>
+                    <th style="font-weight:600; border-bottom:1px solid var(--card-border);">Date</th>
+                    <th style="font-weight:600; border-bottom:1px solid var(--card-border);">Action</th>
+                  </tr>
+                </thead>
+                <tbody style="font-size:.9rem;">
+                  <tr>
+                    <td style="border-bottom:1px solid var(--card-border); padding:14px 8px;">Birth Chart — March 2026</td>
+                    <td style="border-bottom:1px solid var(--card-border); padding:14px 8px;"><span class="badge" style="background:var(--accent-dim); color:var(--accent);">Birth Chart</span></td>
+                    <td style="border-bottom:1px solid var(--card-border); padding:14px 8px; opacity:.6;">15 Mar 2026</td>
+                    <td style="border-bottom:1px solid var(--card-border); padding:14px 8px;">
+                      <a href="#" class="btn-ghost" style="font-size:.78rem; padding:6px 16px; text-decoration:none;"><i class="bi bi-download me-1"></i>Download</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="padding:14px 8px;">Compatibility — Feb 2026</td>
+                    <td style="padding:14px 8px;"><span class="badge" style="background:rgba(59,130,246,.12); color:#3b82f6;">Synastry</span></td>
+                    <td style="padding:14px 8px; opacity:.6;">02 Feb 2026</td>
+                    <td style="padding:14px 8px;">
+                      <a href="#" class="btn-ghost" style="font-size:.78rem; padding:6px 16px; text-decoration:none;"><i class="bi bi-download me-1"></i>Download</a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ TAB: PROFILE ══ -->
+    <div data-tab="profile" style="display:none;">
+      <div class="dash-card">
+        <div class="d-flex align-items-center gap-4 mb-5">
+          <img src="https://ui-avatars.com/api/?name=John+Doe&background=C9A96E&color=fff&size=120"
+               alt="Profile photo" class="rounded-circle" width="80" height="80" style="border:3px solid var(--accent);">
+          <div>
+            <h5 class="h-font mb-1">John Doe</h5>
+            <p class="text-muted small mb-2">Member since January 2024</p>
+            <button class="btn-ghost" style="font-size:.78rem; padding:6px 14px;">Change Photo</button>
+          </div>
+        </div>
+        <form onsubmit="event.preventDefault(); alert('Profile saved!');">
+          <div class="row g-4">
+            <div class="col-md-6">
+              <label for="p-name" class="form-label small fw-semibold">Full Name</label>
+              <input id="p-name" type="text" class="form-field" value="John Doe">
+            </div>
+            <div class="col-md-6">
+              <label for="p-email" class="form-label small fw-semibold">Email</label>
+              <input id="p-email" type="email" class="form-field" value="john.doe@email.com">
+            </div>
+            <div class="col-md-4">
+              <label for="p-dob" class="form-label small fw-semibold">Date of Birth</label>
+              <input id="p-dob" type="date" class="form-field" value="1990-07-15">
+            </div>
+            <div class="col-md-4">
+              <label for="p-tob" class="form-label small fw-semibold">Time of Birth</label>
+              <input id="p-tob" type="time" class="form-field" value="08:30">
+            </div>
+            <div class="col-md-4">
+              <label for="p-pob" class="form-label small fw-semibold">Place of Birth</label>
+              <input id="p-pob" type="text" class="form-field" value="New York, USA">
+            </div>
+            <div class="col-12">
+              <button type="submit" class="btn-gold">Save Profile</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- ══ TAB: REPORTS ══ -->
+    <div data-tab="reports" style="display:none;">
+      <div class="row g-4">
+        <div class="col-md-6" id="r1">
+          <div class="dash-card d-flex gap-4 align-items-start">
+            <div class="kpi-icon flex-shrink-0"><i class="bi bi-file-earmark-pdf-fill" aria-hidden="true"></i></div>
+            <div class="flex-grow-1">
+              <h6 class="h-font mb-1">Birth Chart — March 2026</h6>
+              <p class="text-muted small mb-3">Purchased: 15 Mar 2026 &middot; 60 pages</p>
+              <div class="d-flex gap-2 flex-wrap">
+                <a href="#" class="btn-gold" style="font-size:.78rem; padding:8px 18px; text-decoration:none;"><i class="bi bi-download me-1"></i>Download PDF</a>
+                <button class="btn-ghost" style="font-size:.78rem; padding:8px 18px;">Preview</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="dash-card d-flex gap-4 align-items-start">
+            <div class="kpi-icon flex-shrink-0" style="background:rgba(59,130,246,.12); color:#3b82f6;">
+              <i class="bi bi-people-fill" aria-hidden="true"></i>
+            </div>
+            <div class="flex-grow-1">
+              <h6 class="h-font mb-1">Compatibility — Feb 2026</h6>
+              <p class="text-muted small mb-3">Purchased: 02 Feb 2026 &middot; 42 pages</p>
+              <div class="d-flex gap-2 flex-wrap">
+                <a href="#" class="btn-gold" style="font-size:.78rem; padding:8px 18px; text-decoration:none;"><i class="bi bi-download me-1"></i>Download PDF</a>
+                <button class="btn-ghost" style="font-size:.78rem; padding:8px 18px;">Preview</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 text-center py-4">
+          <a href="services.html" class="btn-ghost" style="text-decoration:none;"><i class="bi bi-plus-circle me-2"></i>Purchase a New Report</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ TAB: BOOKINGS ══ -->
+    <div data-tab="bookings" style="display:none;">
+      <div class="dash-card">
+        <h5 class="h-font mb-4">Upcoming Consultations</h5>
+        <div class="d-flex align-items-center gap-4 p-4 rounded-3 mb-3 upcoming-box" style="background:var(--bg-alt); border:1px solid var(--card-border);">
+          <div class="text-center p-3 rounded-3 text-white" style="background:var(--accent); min-width:76px;">
+            <div style="font-size:1.5rem; font-family:var(--font-h);">28</div>
+            <div style="font-size:.7rem;">MAR</div>
+          </div>
+          <div class="flex-grow-1">
+            <h6 class="h-font mb-1">Career Path Consultation</h6>
+            <p class="text-muted small mb-0"><i class="bi bi-clock me-1"></i>15:30 IST · 60 min · Zoom</p>
+          </div>
+          <div>
+            <span class="badge" style="background:rgba(34,197,94,.15); color:#22c55e; font-size:.75rem; padding:6px 12px;">Confirmed</span>
+          </div>
+        </div>
+        <div class="d-flex align-items-center gap-4 p-4 rounded-3 upcoming-box" style="background:var(--bg-alt); border:1px solid var(--card-border);">
+          <div class="text-center p-3 rounded-3 text-white" style="background:var(--secondary); min-width:76px; opacity:.7;">
+            <div style="font-size:1.5rem; font-family:var(--font-h);">10</div>
+            <div style="font-size:.7rem;">APR</div>
+          </div>
+          <div class="flex-grow-1">
+            <h6 class="h-font mb-1">Relationship &amp; Synastry Session</h6>
+            <p class="text-muted small mb-0"><i class="bi bi-clock me-1"></i>12:00 IST · 60 min · Zoom</p>
+          </div>
+          <div>
+            <span class="badge" style="background:rgba(234,179,8,.15); color:#eab308; font-size:.75rem; padding:6px 12px;">Pending</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ TAB: HISTORY ══ -->
+    <div data-tab="history" style="display:none;">
+      <div class="dash-card">
+        <h5 class="h-font mb-4">Chart History</h5>
+        <div class="table-responsive">
+          <table class="table mb-0" style="color:var(--text); font-size:.9rem;">
+            <thead style="font-size:.78rem; text-transform:uppercase; letter-spacing:.08em; opacity:.5;">
+              <tr>
+                <th style="font-weight:600; border-bottom:1px solid var(--card-border);">Date</th>
+                <th style="font-weight:600; border-bottom:1px solid var(--card-border);">Chart Type</th>
+                <th style="font-weight:600; border-bottom:1px solid var(--card-border);">Status</th>
+                <th style="font-weight:600; border-bottom:1px solid var(--card-border);">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="border-bottom:1px solid var(--card-border); padding:14px 8px; opacity:.7;">15 Mar 2026</td>
+                <td style="border-bottom:1px solid var(--card-border); padding:14px 8px;">Natal Birth Chart</td>
+                <td style="border-bottom:1px solid var(--card-border); padding:14px 8px;"><span class="badge" style="background:rgba(34,197,94,.15); color:#22c55e;">Complete</span></td>
+                <td style="border-bottom:1px solid var(--card-border); padding:14px 8px;"><a href="#" class="text-accent text-decoration-none small">View</a></td>
+              </tr>
+              <tr>
+                <td style="padding:14px 8px; opacity:.7;">02 Feb 2026</td>
+                <td style="padding:14px 8px;">Synastry Chart</td>
+                <td style="padding:14px 8px;"><span class="badge" style="background:rgba(34,197,94,.15); color:#22c55e;">Complete</span></td>
+                <td style="padding:14px 8px;"><a href="#" class="text-accent text-decoration-none small">View</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ TAB: DOWNLOADS ══ -->
+    <div data-tab="downloads" style="display:none;">
+      <div class="dash-card">
+        <h5 class="h-font mb-4">Your Downloads</h5>
+        <div class="row g-3">
+          <div class="col-md-4">
+            <div style="background:var(--bg-alt); border:1px solid var(--card-border); border-radius:var(--radius-sm); padding:20px; text-align:center;">
+              <i class="bi bi-file-earmark-pdf-fill text-accent" style="font-size:2.5rem;" aria-hidden="true"></i>
+              <p class="small fw-semibold mt-3 mb-1">Birth Chart — Mar 2026</p>
+              <p class="small text-muted mb-3">3.2 MB · PDF</p>
+              <a href="#" class="btn-gold" style="font-size:.78rem; padding:8px 18px; text-decoration:none; width:100%; display:block;">Download</a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div style="background:var(--bg-alt); border:1px solid var(--card-border); border-radius:var(--radius-sm); padding:20px; text-align:center;">
+              <i class="bi bi-file-earmark-pdf-fill" style="font-size:2.5rem; color:#3b82f6;" aria-hidden="true"></i>
+              <p class="small fw-semibold mt-3 mb-1">Compatibility — Feb 2026</p>
+              <p class="small text-muted mb-3">2.8 MB · PDF</p>
+              <a href="#" class="btn-gold" style="font-size:.78rem; padding:8px 18px; text-decoration:none; width:100%; display:block;">Download</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ TAB: MESSAGES ══ -->
+    <div data-tab="messages" style="display:none;">
+      <div class="dash-card p-0 overflow-hidden" style="height:560px; display:flex; flex-direction:column;">
+        <div class="p-4 border-bottom" style="border-color:var(--card-border)!important;">
+          <div class="d-flex align-items-center gap-3">
+            <img src="https://ui-avatars.com/api/?name=AstroVeda+Astrologer&background=1A2634&color=C9A96E&size=80"
+                 alt="Astrologer" class="rounded-circle" width="42" height="42" style="border:2px solid var(--accent);">
+            <div>
+              <strong class="d-block h-font" style="font-size:.95rem;">Aryan Sharma</strong>
+              <span class="text-muted small">Master Astrologer · Active today</span>
+            </div>
+          </div>
+        </div>
+
+        <div id="chat-feed" class="flex-grow-1 p-4 overflow-y-auto" style="overflow-y:auto;" role="log" aria-live="polite" aria-label="Message thread">
+          <!-- Received -->
+          <div class="mb-4" style="max-width:75%;">
+            <div class="p-3 rounded-3" style="background:var(--bg-alt); border:1px solid var(--card-border);">
+              <p class="mb-1" style="font-size:.9rem;">Hello John! I've reviewed your chart. Mercury is in retrograde this week — avoid major contract signings.</p>
+              <span class="text-muted" style="font-size:.72rem;">Mon 10:22 AM</span>
+            </div>
+          </div>
+          <!-- Sent -->
+          <div class="mb-4 ms-auto" style="max-width:75%;">
+            <div class="p-3 rounded-3 text-white" style="background:var(--accent);">
+              <p class="mb-1" style="font-size:.9rem;">Thank you! Should I also delay the business registration I had planned?</p>
+              <span style="font-size:.72rem; opacity:.8;">Mon 10:45 AM</span>
+            </div>
+          </div>
+          <!-- Received -->
+          <div class="mb-4" style="max-width:75%;">
+            <div class="p-3 rounded-3" style="background:var(--bg-alt); border:1px solid var(--card-border);">
+              <p class="mb-1" style="font-size:.9rem;">Yes, I'd recommend waiting until the 8th of April. Jupiter direct will give that venture a far stronger foundation. ✦</p>
+              <span class="text-muted" style="font-size:.72rem;">Mon 11:02 AM</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-4 border-top" style="border-color:var(--card-border)!important;">
+          <form onsubmit="sendMessage(event);" class="d-flex gap-2" role="form" aria-label="Send a message">
+            <input id="msg-input" type="text" class="form-field" placeholder="Type your message…" aria-label="Message text" style="flex:1;">
+            <button type="submit" class="btn-gold" style="padding:10px 20px;" aria-label="Send message">
+              <i class="bi bi-send-fill" aria-hidden="true"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ TAB: PAYMENTS ══ -->
+    <div data-tab="payments" style="display:none;">
+      <div class="dash-card">
+        <h5 class="h-font mb-4">Payment History</h5>
+        <div class="table-responsive">
+          <table class="table mb-0" style="color:var(--text); font-size:.9rem;">
+            <thead style="font-size:.78rem; text-transform:uppercase; letter-spacing:.08em; opacity:.5;">
+              <tr>
+                <th style="font-weight:600; border-bottom:1px solid var(--card-border);">Date</th>
+                <th style="font-weight:600; border-bottom:1px solid var(--card-border);">Description</th>
+                <th style="font-weight:600; border-bottom:1px solid var(--card-border);">Amount</th>
+                <th style="font-weight:600; border-bottom:1px solid var(--card-border);">Status</th>
+                <th style="font-weight:600; border-bottom:1px solid var(--card-border);">Invoice</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="border-bottom:1px solid var(--card-border); padding:14px 8px; opacity:.7;">15 Mar 2026</td>
+                <td style="border-bottom:1px solid var(--card-border); padding:14px 8px;">Birth Chart Report</td>
+                <td style="border-bottom:1px solid var(--card-border); padding:14px 8px; font-weight:600; color:var(--accent);">$29.00</td>
+                <td style="border-bottom:1px solid var(--card-border); padding:14px 8px;"><span class="badge" style="background:rgba(34,197,94,.15); color:#22c55e;">Paid</span></td>
+                <td style="border-bottom:1px solid var(--card-border); padding:14px 8px;"><a href="#" class="text-accent text-decoration-none small">Download</a></td>
+              </tr>
+              <tr>
+                <td style="padding:14px 8px; opacity:.7;">02 Feb 2026</td>
+                <td style="padding:14px 8px;">Compatibility Report</td>
+                <td style="padding:14px 8px; font-weight:600; color:var(--accent);">$49.00</td>
+                <td style="padding:14px 8px;"><span class="badge" style="background:rgba(34,197,94,.15); color:#22c55e;">Paid</span></td>
+                <td style="padding:14px 8px;"><a href="#" class="text-accent text-decoration-none small">Download</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="mt-4 p-4 rounded-3 d-flex align-items-center justify-content-between flex-wrap gap-2" style="background:var(--bg-alt); border:1px solid var(--card-border);">
+          <div>
+            <p class="small text-muted mb-1">Total Spent</p>
+            <p class="h-font fw-bold text-accent mb-0" style="font-size:1.6rem;">$78.00</p>
+          </div>
+          <a href="services.html" class="btn-gold" style="text-decoration:none;"><i class="bi bi-bag-plus me-2"></i>Buy More Reports</a>
+        </div>
+      </div>
+    </div>
+
+  </main><!-- /.dash-main -->
+</div><!-- /.dash-wrap -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/dashboard.js"></script>
+<script>
+  function sendMessage(e) {
+    e.preventDefault();
+    const input = document.getElementById('msg-input');
+    const text  = input.value.trim();
+    if (!text) return;
+    const feed = document.getElementById('chat-feed');
+    const msg  = document.createElement('div');
+    msg.className = 'mb-4 ms-auto';
+    msg.style.maxWidth = '75%';
+    msg.innerHTML = `
+      <div class="p-3 rounded-3 text-white" style="background:var(--accent);">
+        <p class="mb-1" style="font-size:.9rem;">${text.replace(/</g,'&lt;')}</p>
+        <span style="font-size:.72rem; opacity:.8;">${new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'})}</span>
+      </div>`;
+    feed.appendChild(msg);
+    feed.scrollTop = feed.scrollHeight;
+    input.value = '';
+  }
+</script>
+</body>
+</html>

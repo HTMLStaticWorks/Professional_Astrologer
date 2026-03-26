@@ -1,0 +1,140 @@
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <title>Sign In | AstroVeda</title>
+  <meta name="description" content="Sign in to your AstroVeda account to access your reports, bookings, and messages.">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+<body>
+
+<div class="auth-wrap">
+  <button id="theme-toggle" class="icon-btn auth-theme-toggle" aria-label="Toggle light/dark mode">
+    <i class="bi bi-moon-stars-fill" aria-hidden="true"></i>
+  </button>
+  <div class="container">
+    <div class="auth-card reveal-up">
+      <!-- Brand -->
+      <div class="text-center mb-5">
+        <a href="index.html" class="text-decoration-none d-inline-block mb-4">
+          <span class="h-font fw-bold text-accent" style="font-size:2rem; letter-spacing:-.03em;">
+            <i class="bi bi-stars" aria-hidden="true"></i> AstroVeda
+          </span>
+        </a>
+        <h1 class="h3 h-font text-white mb-2">Welcome Back</h1>
+        <p style="color:rgba(255,255,255,.5); font-size:.9rem;">Sign in to access your cosmic dashboard.</p>
+      </div>
+
+      <!-- Form -->
+      <form id="login-form" onsubmit="handleLogin(event);" novalidate>
+        <div class="mb-4">
+          <label for="l-email" class="form-label small fw-semibold" style="color:rgba(255,255,255,.7);">Email Address</label>
+          <input id="l-email" type="email" class="form-field" placeholder="you@example.com" autocomplete="email" required
+                 style="color:#fff;" aria-required="true">
+        </div>
+
+        <div class="mb-4">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <label for="l-password" class="form-label small fw-semibold mb-0" style="color:rgba(255,255,255,.7);">Password</label>
+            <a href="#" class="text-accent text-decoration-none" style="font-size:.82rem;">Forgot password?</a>
+          </div>
+          <div class="position-relative">
+            <input id="l-password" type="password" class="form-field" placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢" autocomplete="current-password" required
+                   style="color:#fff; padding-inline-end:46px;" aria-required="true">
+            <button type="button" onclick="togglePwd('l-password','eye-login')"
+                    class="position-absolute top-50 translate-middle-y end-0 me-3 border-0 bg-transparent p-0"
+                    style="color:rgba(255,255,255,.4); cursor:pointer;" aria-label="Toggle password visibility">
+              <i id="eye-login" class="bi bi-eye" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="d-flex align-items-center mb-5">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="l-remember">
+            <label class="form-check-label" for="l-remember" style="font-size:.85rem; color:rgba(255,255,255,.6);">
+              Keep me signed in for 30 days
+            </label>
+          </div>
+        </div>
+
+        <!-- Error msg -->
+        <div id="login-error" style="display:none;" class="mb-4 p-3 rounded-2" style="background:rgba(239,68,68,.15); border:1px solid rgba(239,68,68,.3);">
+          <p class="small mb-0" style="color:#f87171;"><i class="bi bi-exclamation-circle me-2"></i>Invalid email or password. Please try again.</p>
+        </div>
+
+        <button type="submit" class="btn-gold w-100" style="padding:14px; font-size:1rem; justify-content:center;" id="login-btn">
+          Sign In <i class="bi bi-arrow-right ms-2" aria-hidden="true"></i>
+        </button>
+      </form>
+
+      <!-- Divider -->
+      <div class="d-flex align-items-center gap-3 my-5">
+        <hr style="flex:1; border-color:rgba(255,255,255,.1);">
+        <span style="font-size:.78rem; color:rgba(255,255,255,.3);">or continue with</span>
+        <hr style="flex:1; border-color:rgba(255,255,255,.1);">
+      </div>
+
+      <!-- Social logins (placeholder) -->
+      <div class="row g-3 mb-5">
+        <div class="col-6">
+          <button class="w-100 py-3 border rounded-2 bg-transparent text-white d-flex align-items-center justify-content-center gap-2"
+                  style="border-color:rgba(255,255,255,.15)!important; font-size:.85rem; cursor:pointer; transition:.25s;"
+                  onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='rgba(255,255,255,.15)'" aria-label="Continue with Google">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+              <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+              <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+              <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+            </svg>
+            Google
+          </button>
+        </div>
+        <div class="col-6">
+          <button class="w-100 py-3 border rounded-2 bg-transparent text-white d-flex align-items-center justify-content-center gap-2"
+                  style="border-color:rgba(255,255,255,.15)!important; font-size:.85rem; cursor:pointer; transition:.25s;"
+                  onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='rgba(255,255,255,.15)'" aria-label="Continue with Facebook">
+            <i class="bi bi-facebook" style="color:#4267B2;" aria-hidden="true"></i> Facebook
+          </button>
+        </div>
+      </div>
+
+      <p class="text-center mb-0" style="color:rgba(255,255,255,.45); font-size:.87rem;">
+        Don't have an account?
+        <a href="register.html" class="text-accent text-decoration-none fw-semibold">Create one free</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+  function togglePwd(inputId, iconId) {
+    const input = document.getElementById(inputId);
+    const icon  = document.getElementById(iconId);
+    const show  = input.type === 'password';
+    input.type  = show ? 'text' : 'password';
+    icon.className = show ? 'bi bi-eye-slash' : 'bi bi-eye';
+  }
+
+  function handleLogin(e) {
+    e.preventDefault();
+    const btn   = document.getElementById('login-btn');
+    const errEl = document.getElementById('login-error');
+    btn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span> Signing inâ€¦';
+    btn.disabled  = true;
+    errEl.style.display = 'none';
+
+    // Simulate auth â€” redirect after 1.2s
+    setTimeout(() => {
+      window.location.href = 'dashboard.html';
+    }, 1200);
+  }
+</script>
+</body>
+</html>

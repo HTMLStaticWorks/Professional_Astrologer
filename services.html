@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <title>Astrology Services | AstroVeda — Birth Charts, Compatibility & Live Sessions</title>
+  <meta name="description"
+    content="Explore AstroVeda's premium astrology services: 60-page Birth Chart Reports, Love Compatibility Synastry, and Live 1-on-1 Consultation sessions.">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+
+<body class="has-fixed-nav">
+
+  <!-- NAVBAR -->
+  <nav class="nav-astro navbar navbar-expand-xl" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a class="navbar-brand" href="index.html"><i class="bi bi-stars" aria-hidden="true"></i> AstroVeda</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mainNav"
+        aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="bi bi-list fs-2" style="color:var(--text);" aria-hidden="true"></i>
+      </button>
+
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="mainNav" aria-labelledby="mainNavLabel" style="background:var(--nav-bg); backdrop-filter:blur(16px);">
+        <div class="offcanvas-header border-bottom" style="border-color:var(--card-border)!important;">
+          <h5 class="offcanvas-title h-font fw-bold text-accent" id="mainNavLabel">AstroVeda</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close" style="filter:var(--text-invert);"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav mx-auto align-items-lg-center gap-lg-1">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="home-2.html">Cosmic Portal</a></li>
+            <li class="nav-item"><a class="nav-link active" href="services.html" aria-current="page">Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="book-consultation.html">Book Consultation</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          </ul>
+          <div class="d-flex flex-column flex-lg-row align-items-lg-center gap-3 mt-4 mt-lg-0">
+            <div class="d-flex align-items-center gap-2">
+              <a href="dashboard.html" class="icon-btn" aria-label="Dashboard" title="Dashboard">
+                <i class="bi bi-grid-fill" aria-hidden="true"></i>
+              </a>
+              <button id="theme-toggle" class="icon-btn" aria-label="Toggle dark mode">
+                <i class="bi bi-moon-stars-fill" aria-hidden="true"></i>
+              </button>
+              <button id="rtl-toggle" class="rtl-btn" aria-label="Switch direction">عربي</button>
+            </div>
+            <a href="login.html" class="btn-gold w-100 w-lg-auto" style="text-decoration:none;"><i class="bi bi-person-circle" aria-hidden="true"></i> Login</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="section-pad-sm text-center"
+    style="background:var(--bg-alt); border-bottom:1px solid var(--card-border);">
+    <div class="container reveal-up">
+      <span class="eyebrow">What We Offer</span>
+      <h1 class="display-5 fw-bold mt-3 mb-3">Our Celestial <span class="text-accent">Services</span></h1>
+      <p class="text-muted fs-5 mx-auto" style="max-width:680px;">Hand-crafted cosmic reports and live guidance, built
+        on 20+ years of precise astrological expertise.</p>
+    </div>
+  </section>
+
+  <!-- ═══ SERVICE 1: BIRTH CHART ═══ -->
+  <section id="birth-chart" class="section-pad">
+    <div class="container">
+      <div class="row align-items-center g-5 reveal-up">
+        <div class="col-lg-6">
+          <div
+            style="background:var(--bg-alt); border:1px solid var(--card-border); border-radius:var(--radius); overflow:hidden;">
+            <img src="https://images.unsplash.com/photo-1532968961962-8a0cb3a2d4f5?w=800&h=550&fit=crop&q=80"
+              alt="Ancient celestial map and planetary chart" class="img-fluid" style="opacity:.85;"
+              crossorigin="anonymous">
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <span class="eyebrow">Digital PDF Report</span>
+          <h2 class="mt-3 mb-4">Comprehensive Birth Chart Analysis</h2>
+          <p class="text-muted mb-4">Our flagship 60-page PDF charts every planetary position at the precise moment of
+            your birth. Includes Career horizons, Health diagnostics, Karma patterns, and Dasha time-period forecasting.
+          </p>
+          <ul class="list-unstyled mb-5">
+            <li class="d-flex align-items-start gap-3 mb-3">
+              <i class="bi bi-check-circle-fill text-accent mt-1" aria-hidden="true"></i>
+              <span>Ascendant, Moon, and Planetary House Analysis</span>
+            </li>
+            <li class="d-flex align-items-start gap-3 mb-3">
+              <i class="bi bi-check-circle-fill text-accent mt-1" aria-hidden="true"></i>
+              <span>27 Nakshatra (Vedic Star) deep-dive</span>
+            </li>
+            <li class="d-flex align-items-start gap-3 mb-3">
+              <i class="bi bi-check-circle-fill text-accent mt-1" aria-hidden="true"></i>
+              <span>Major &amp; Minor Dasha period calendar</span>
+            </li>
+            <li class="d-flex align-items-start gap-3">
+              <i class="bi bi-check-circle-fill text-accent mt-1" aria-hidden="true"></i>
+              <span>60+ pages, delivered as instant PDF download</span>
+            </li>
+          </ul>
+          <div class="d-flex align-items-center gap-4 flex-wrap">
+            <div>
+              <span class="fs-2 fw-bold h-font text-accent">$29</span>
+              <span class="text-muted small ms-1">one-time</span>
+            </div>
+            <a href="book-consultation.html" class="btn-gold" style="text-decoration:none;">Order Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ SERVICE 2: COMPATIBILITY ═══ -->
+  <section id="compatibility" class="section-pad" style="background:var(--bg-alt);">
+    <div class="container">
+      <div class="row align-items-center g-5 flex-lg-row-reverse reveal-up">
+        <div class="col-lg-6">
+          <div
+            style="background:var(--bg); border:1px solid var(--card-border); border-radius:var(--radius); overflow:hidden;">
+            <img src="assets/images/service_synastry_full.png"
+              alt="Ethereal silhouettes of two souls connected by golden astrological alignments" class="img-fluid"
+              style="opacity:.9;">
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <span class="eyebrow">Relationship Synastry</span>
+          <h2 class="mt-3 mb-4">Love &amp; Compatibility Analysis</h2>
+          <p class="text-muted mb-4">Two souls, two charts, one cosmic revelation. Our synastry report overlays your
+            chart with your partner's to reveal the depth of connection, friction points, and long-term potential.</p>
+          <ul class="list-unstyled mb-5">
+            <li class="d-flex align-items-start gap-3 mb-3"><i
+                class="bi bi-check-circle-fill text-accent mt-1"></i><span>7 core compatibility domains scored</span>
+            </li>
+            <li class="d-flex align-items-start gap-3 mb-3"><i
+                class="bi bi-check-circle-fill text-accent mt-1"></i><span>Emotional &amp; communication
+                synchrony</span></li>
+            <li class="d-flex align-items-start gap-3 mb-3"><i
+                class="bi bi-check-circle-fill text-accent mt-1"></i><span>Venus &amp; Mars aspect interpretation</span>
+            </li>
+            <li class="d-flex align-items-start gap-3"><i
+                class="bi bi-check-circle-fill text-accent mt-1"></i><span>Karmic connection &amp; past-life
+                indicators</span></li>
+          </ul>
+          <div class="d-flex align-items-center gap-4 flex-wrap">
+            <div><span class="fs-2 fw-bold h-font text-accent">$49</span><span
+                class="text-muted small ms-1">one-time</span></div>
+            <a href="book-consultation.html" class="btn-gold" style="text-decoration:none;">Get My Report</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ SERVICE 3: HOROSCOPE ═══ -->
+  <section id="horoscope" class="section-pad">
+    <div class="container">
+      <div class="row align-items-center g-5 reveal-up">
+        <div class="col-lg-6">
+          <div class="row g-3">
+            <div class="col-6">
+              <div class="card-astro text-center p-4"><i class="bi bi-sun fs-2 text-accent d-block mb-2"></i><strong
+                  class="h-font small">Daily</strong></div>
+            </div>
+            <div class="col-6">
+              <div class="card-astro text-center p-4"><i
+                  class="bi bi-calendar-week fs-2 text-accent d-block mb-2"></i><strong
+                  class="h-font small">Weekly</strong></div>
+            </div>
+            <div class="col-6">
+              <div class="card-astro text-center p-4"><i
+                  class="bi bi-calendar-month fs-2 text-accent d-block mb-2"></i><strong
+                  class="h-font small">Monthly</strong></div>
+            </div>
+            <div class="col-6">
+              <div class="card-astro text-center p-4"><i
+                  class="bi bi-calendar-range fs-2 text-accent d-block mb-2"></i><strong
+                  class="h-font small">Yearly</strong></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <span class="eyebrow">Forecasts &amp; Transits</span>
+          <h2 class="mt-3 mb-4">Personalized Horoscope Readings</h2>
+          <p class="text-muted mb-4">Unlike generic Sun-sign horoscopes, our readings are based on your full birth chart
+            and current planetary transits. Every forecast is written specifically for your chart.</p>
+          <ul class="list-unstyled mb-5">
+            <li class="d-flex align-items-start gap-3 mb-3"><i
+                class="bi bi-check-circle-fill text-accent mt-1"></i><span>Daily, Weekly, Monthly, Annual reports</span>
+            </li>
+            <li class="d-flex align-items-start gap-3 mb-3"><i
+                class="bi bi-check-circle-fill text-accent mt-1"></i><span>Current transit impacts on your chart</span>
+            </li>
+            <li class="d-flex align-items-start gap-3"><i
+                class="bi bi-check-circle-fill text-accent mt-1"></i><span>Career, love, and health forecasts</span>
+            </li>
+          </ul>
+          <div class="d-flex align-items-center gap-4 flex-wrap">
+            <div><span class="fs-2 fw-bold h-font text-accent">$19</span><span class="text-muted small ms-1">/
+                month</span></div>
+            <a href="book-consultation.html" class="btn-gold" style="text-decoration:none;">Subscribe</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ SERVICE 4: LIVE CONSULTATION ═══ -->
+  <section id="live-consultation" class="section-pad" style="background:var(--bg-alt);">
+    <div class="container">
+      <div class="row align-items-center g-5 flex-lg-row-reverse reveal-up">
+        <div class="col-lg-5">
+          <div class="p-5 text-center" style="background:var(--secondary); border-radius:var(--radius); color:#fff;">
+            <i class="bi bi-camera-video-fill text-accent" style="font-size:4rem;"></i>
+            <h4 class="h-font mt-4">60-Min Video Session</h4>
+            <p class="opacity-75 small mt-2">Zoom · Google Meet · Recorded</p>
+            <hr style="border-color:rgba(255,255,255,.1);">
+            <div class="d-flex justify-content-around mt-3">
+              <div class="text-center">
+                <div class="text-accent fw-bold">24h</div>
+                <div class="small opacity-50">Prep window</div>
+              </div>
+              <div class="text-center">
+                <div class="text-accent fw-bold">HD</div>
+                <div class="small opacity-50">Recording</div>
+              </div>
+              <div class="text-center">
+                <div class="text-accent fw-bold">✦</div>
+                <div class="small opacity-50">PDF Summary</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <span class="eyebrow">Direct Access</span>
+          <h2 class="mt-3 mb-4">Live 1-on-1 Consultation</h2>
+          <p class="text-muted mb-4">Speak directly with Master Astrologer Aryan Sharma. Bring your life questions —
+            career crossroads, relationship decisions, health concerns, or spiritual path — and receive precise
+            in-session guidance.</p>
+          <ul class="list-unstyled mb-5">
+            <li class="d-flex align-items-start gap-3 mb-3"><i
+                class="bi bi-check-circle-fill text-accent mt-1"></i><span>Real-time chart analysis during
+                session</span></li>
+            <li class="d-flex align-items-start gap-3 mb-3"><i
+                class="bi bi-check-circle-fill text-accent mt-1"></i><span>Session recording delivered within 24h</span>
+            </li>
+            <li class="d-flex align-items-start gap-3 mb-3"><i
+                class="bi bi-check-circle-fill text-accent mt-1"></i><span>Follow-up PDF summary of key insights</span>
+            </li>
+            <li class="d-flex align-items-start gap-3"><i
+                class="bi bi-check-circle-fill text-accent mt-1"></i><span>100% private and confidential</span></li>
+          </ul>
+          <div class="d-flex align-items-center gap-4 flex-wrap">
+            <div><span class="fs-2 fw-bold h-font text-accent">$99</span><span class="text-muted small ms-1">per
+                session</span></div>
+            <a href="book-consultation.html" class="btn-gold" style="text-decoration:none;">Book a Session</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer-main" role="contentinfo">
+    <div class="container">
+      <div class="row g-5 pb-5">
+        <div class="col-lg-4">
+          <div class="footer-brand"><i class="bi bi-stars" aria-hidden="true"></i> AstroVeda</div>
+          <p class="footer-desc">Guiding souls through the cosmic dance of the universe with expert Vedic &amp; Western
+            astrology readings.</p>
+          <div class="footer-social d-flex gap-2 mt-4">
+            <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" aria-label="Twitter / X"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+        <div class="col-6 col-lg-2 ms-lg-auto">
+          <p class="footer-heading">Navigation</p>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-2">
+          <p class="footer-heading">Legal</p>
+          <ul class="footer-links">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Disclaimer</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-lg-3">
+          <p class="footer-heading">Newsletter</p>
+          <form onsubmit="event.preventDefault();" class="d-flex gap-2 footer-newsletter-form">
+            <input type="email" class="form-field" placeholder="you@example.com" aria-label="Email" required
+              style="flex:1; font-size:.85rem; padding:12px 16px;">
+            <button type="submit" class="btn-gold" style="padding:12px 20px;"><i class="bi bi-send-fill"></i></button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container text-center">&copy; 2026 AstroVeda. All Rights Reserved.</div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>
