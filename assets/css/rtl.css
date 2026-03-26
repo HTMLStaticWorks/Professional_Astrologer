@@ -53,6 +53,28 @@
   margin-inline-end: auto;
 }
 
+[dir="rtl"] #chat-feed > .ms-auto {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
+[dir="rtl"] .dash-nav-link .badge.ms-auto {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
+[dir="rtl"] .dash-topbar .dropdown-menu-end {
+  right: auto !important;
+  left: 0 !important;
+}
+
+[dir="rtl"] .auth-card .auth-input-toggle {
+  right: auto !important;
+  left: 0 !important;
+  margin-right: 0 !important;
+  margin-left: 1rem !important;
+}
+
 /* Footer */
 [dir="rtl"] .footer-desc { margin-inline-end: 0; margin-inline-start: auto; }
 

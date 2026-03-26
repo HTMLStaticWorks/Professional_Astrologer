@@ -757,6 +757,34 @@ select.form-field option { background: var(--card-bg); color: var(--text); }
   justify-content: center;
 }
 
+[data-tab="history"] .history-action-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  transition: background var(--dur) var(--ease), color var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
+}
+
+[data-tab="history"] .history-action-link:hover {
+  background: var(--accent-dim);
+  color: var(--accent) !important;
+  box-shadow: 0 0 0 1px rgba(201,169,110,.2);
+}
+
+@media (max-width: 991.98px) {
+  [data-tab="reports"] .report-action-btn {
+    min-height: 56px;
+    line-height: 1.2;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 779.98px) {
+  [data-tab="downloads"] .row.g-3.justify-content-center > .col-md-4 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
 /* sidebar mobile */
 @media (max-width: 992px) {
   .dash-sidebar {
@@ -1359,6 +1387,11 @@ select.form-field option { background: var(--card-bg); color: var(--text); }
 @media (max-width: 576px) {
   .nav-astro .navbar-brand { font-size: 1.3rem; }
   .btn-gold, .btn-ghost   { padding: 11px 22px; font-size: .84rem; }
+  .cosmic-cta-actions > a {
+    min-height: 82px;
+    text-align: center;
+    line-height: 1.25;
+  }
   .hero-section .col-lg-6:last-child .zodiac-wrap {
     margin-bottom: 40px;
   }

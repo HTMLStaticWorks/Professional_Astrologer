@@ -3,6 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    (() => {
+      const savedDir = localStorage.getItem('av_dir');
+      if (savedDir === 'rtl' || savedDir === 'ltr') {
+        document.documentElement.setAttribute('dir', savedDir);
+      }
+    })();
+  </script>
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
   <title>User Dashboard | AstroVeda</title>
   <meta name="description" content="Manage your astrology reports, bookings, messages, and profile in your AstroVeda dashboard.">
@@ -347,13 +355,13 @@
                 <td style="border-bottom:1px solid var(--card-border); padding:14px 8px; opacity:.7;">15 Mar 2026</td>
                 <td style="border-bottom:1px solid var(--card-border); padding:14px 8px;">Natal Birth Chart</td>
                 <td style="border-bottom:1px solid var(--card-border); padding:14px 8px;"><span class="badge" style="background:rgba(34,197,94,.15); color:#22c55e;">Complete</span></td>
-                <td style="border-bottom:1px solid var(--card-border); padding:14px 8px;"><a href="#" class="text-accent text-decoration-none small">View</a></td>
+                <td style="border-bottom:1px solid var(--card-border); padding:14px 8px;"><a href="#" class="text-accent text-decoration-none small history-action-link">View</a></td>
               </tr>
               <tr>
                 <td style="padding:14px 8px; opacity:.7;">02 Feb 2026</td>
                 <td style="padding:14px 8px;">Synastry Chart</td>
                 <td style="padding:14px 8px;"><span class="badge" style="background:rgba(34,197,94,.15); color:#22c55e;">Complete</span></td>
-                <td style="padding:14px 8px;"><a href="#" class="text-accent text-decoration-none small">View</a></td>
+                <td style="padding:14px 8px;"><a href="#" class="text-accent text-decoration-none small history-action-link">View</a></td>
               </tr>
             </tbody>
           </table>
