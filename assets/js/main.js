@@ -70,8 +70,8 @@
   function applyDir(dir) {
     document.documentElement.setAttribute('dir', dir);
     document.querySelectorAll('#rtl-toggle').forEach(btn => {
-      btn.textContent = dir === 'rtl' ? 'English' : 'عربي';
-      btn.setAttribute('aria-label', dir === 'rtl' ? 'Switch to English' : 'Switch to Arabic RTL');
+      btn.textContent = dir === 'rtl' ? 'LTR' : 'RTL';
+      btn.setAttribute('aria-label', dir === 'rtl' ? 'Switch to Left-to-Right' : 'Switch to Right-to-Left');
     });
   }
 
@@ -288,6 +288,18 @@
   window.avToggleSidebar = function () {
     const sb = document.getElementById('dash-sidebar');
     if (sb) sb.classList.toggle('open');
+  };
+
+  window.togglePassword = function (id, btn) {
+    const input = document.getElementById(id);
+    const icon  = btn.querySelector('i');
+    if (input.type === 'password') {
+      input.type = 'text';
+      icon.className = 'bi bi-eye-slash';
+    } else {
+      input.type = 'password';
+      icon.className = 'bi bi-eye';
+    }
   };
 
 })();

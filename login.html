@@ -24,9 +24,12 @@
 <body>
 
 <div class="auth-wrap">
-  <button id="theme-toggle" class="icon-btn auth-theme-toggle" aria-label="Toggle light/dark mode">
-    <i class="bi bi-moon-stars-fill" aria-hidden="true"></i>
-  </button>
+  <div class="auth-controls">
+    <button id="theme-toggle" class="icon-btn" aria-label="Toggle dark mode">
+      <i class="bi bi-moon-stars-fill" aria-hidden="true"></i>
+    </button>
+    <button id="rtl-toggle" class="rtl-btn" aria-label="Switch direction">RTL</button>
+  </div>
   <div class="container">
     <div class="auth-card reveal-up">
       <!-- Brand -->
@@ -49,12 +52,18 @@
         </div>
 
         <div class="mb-4">
-          <div class="d-flex justify-content-between align-items-center mb-2">
-            <label for="l-password" class="form-label small fw-semibold mb-0 auth-label">Password</label>
+          <label for="l-password" class="form-label small fw-semibold auth-label">Password</label>
+          <div class="position-relative">
+            <input id="l-password" type="password" class="form-field pe-5" placeholder="........" autocomplete="current-password" required
+                   aria-required="true">
+            <button type="button" class="btn-clear position-absolute end-0 top-50 translate-middle-y me-3" 
+                    onclick="togglePassword('l-password', this)" aria-label="Toggle password visibility">
+              <i class="bi bi-eye"></i>
+            </button>
+          </div>
+          <div class="mt-2 text-end">
             <a href="#" class="text-accent text-decoration-none" style="font-size:.82rem;">Forgot password?</a>
           </div>
-          <input id="l-password" type="password" class="form-field" placeholder="........" autocomplete="current-password" required
-                 aria-required="true">
         </div>
 
         <div class="d-flex align-items-center mb-5">
@@ -85,7 +94,7 @@
 
       <!-- Social logins (placeholder) -->
       <div class="row g-3 mb-5">
-        <div class="col-6">
+        <div class="col-4">
           <button class="w-100 py-3 border rounded-2 auth-social-btn d-flex align-items-center justify-content-center gap-2"
                   aria-label="Continue with Google">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -94,13 +103,21 @@
               <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
               <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
             </svg>
-            Google
+            <span class="d-none d-md-inline">Google</span>
           </button>
         </div>
-        <div class="col-6">
+        <div class="col-4">
           <button class="w-100 py-3 border rounded-2 auth-social-btn d-flex align-items-center justify-content-center gap-2"
                   aria-label="Continue with Facebook">
-            <i class="bi bi-facebook" style="color:#4267B2;" aria-hidden="true"></i> Facebook
+            <i class="bi bi-facebook" style="color:#4267B2;" aria-hidden="true"></i>
+            <span class="d-none d-md-inline">Facebook</span>
+          </button>
+        </div>
+        <div class="col-4">
+          <button class="w-100 py-3 border rounded-2 auth-social-btn d-flex align-items-center justify-content-center gap-2"
+                  aria-label="Continue with Apple">
+            <i class="bi bi-apple" style="color:var(--text);" aria-hidden="true"></i>
+            <span class="d-none d-md-inline">Apple</span>
           </button>
         </div>
       </div>

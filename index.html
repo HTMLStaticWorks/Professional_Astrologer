@@ -64,7 +64,7 @@
               <button id="theme-toggle" class="icon-btn" aria-label="Toggle dark mode">
                 <i class="bi bi-moon-stars-fill" aria-hidden="true"></i>
               </button>
-              <button id="rtl-toggle" class="rtl-btn" aria-label="Switch direction">عربي</button>
+              <button id="rtl-toggle" class="rtl-btn" aria-label="Switch direction">RTL</button>
             </div>
             <a href="login.html" class="btn-gold w-100 w-lg-auto" style="text-decoration:none;"><i class="bi bi-person-circle" aria-hidden="true"></i> Login</a>
           </div>
@@ -124,23 +124,23 @@
 
             <svg class="zodiac-svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"
               aria-hidden="true">
-              <circle cx="100" cy="100" r="96" stroke="#C9A96E" stroke-width=".8" opacity=".5" />
-              <circle cx="100" cy="100" r="74" stroke="#C9A96E" stroke-width=".5" opacity=".3" />
-              <circle cx="100" cy="100" r="50" stroke="#C9A96E" stroke-width=".4" opacity=".2" />
+              <circle cx="100" cy="100" r="96" stroke="#D4AF37" stroke-width=".8" opacity=".5" />
+              <circle cx="100" cy="100" r="74" stroke="#D4AF37" stroke-width=".5" opacity=".3" />
+              <circle cx="100" cy="100" r="50" stroke="#D4AF37" stroke-width=".4" opacity=".2" />
               <!-- 12 divider lines -->
-              <line x1="100" y1="4" x2="100" y2="196" stroke="#C9A96E" stroke-width=".4" opacity=".25" />
-              <line x1="4" y1="100" x2="196" y2="100" stroke="#C9A96E" stroke-width=".4" opacity=".25" />
-              <line x1="21" y1="21" x2="179" y2="179" stroke="#C9A96E" stroke-width=".4" opacity=".2" />
-              <line x1="179" y1="21" x2="21" y2="179" stroke="#C9A96E" stroke-width=".4" opacity=".2" />
-              <line x1="4" y1="50" x2="196" y2="150" stroke="#C9A96E" stroke-width=".3" opacity=".15" />
-              <line x1="4" y1="150" x2="196" y2="50" stroke="#C9A96E" stroke-width=".3" opacity=".15" />
-              <line x1="50" y1="4" x2="150" y2="196" stroke="#C9A96E" stroke-width=".3" opacity=".15" />
-              <line x1="150" y1="4" x2="50" y2="196" stroke="#C9A96E" stroke-width=".3" opacity=".15" />
+              <line x1="100" y1="4" x2="100" y2="196" stroke="#D4AF37" stroke-width=".4" opacity=".25" />
+              <line x1="4" y1="100" x2="196" y2="100" stroke="#D4AF37" stroke-width=".4" opacity=".25" />
+              <line x1="21" y1="21" x2="179" y2="179" stroke="#D4AF37" stroke-width=".4" opacity=".2" />
+              <line x1="179" y1="21" x2="21" y2="179" stroke="#D4AF37" stroke-width=".4" opacity=".2" />
+              <line x1="4" y1="50" x2="196" y2="150" stroke="#D4AF37" stroke-width=".3" opacity=".15" />
+              <line x1="4" y1="150" x2="196" y2="50" stroke="#D4AF37" stroke-width=".3" opacity=".15" />
+              <line x1="50" y1="4" x2="150" y2="196" stroke="#D4AF37" stroke-width=".3" opacity=".15" />
+              <line x1="150" y1="4" x2="50" y2="196" stroke="#D4AF37" stroke-width=".3" opacity=".15" />
               <!-- Small dots on outer ring -->
-              <circle cx="100" cy="4" r="2.5" fill="#C9A96E" opacity=".6" />
-              <circle cx="196" cy="100" r="2.5" fill="#C9A96E" opacity=".6" />
-              <circle cx="100" cy="196" r="2.5" fill="#C9A96E" opacity=".6" />
-              <circle cx="4" cy="100" r="2.5" fill="#C9A96E" opacity=".6" />
+              <circle cx="100" cy="4" r="2.5" fill="#D4AF37" opacity=".6" />
+              <circle cx="196" cy="100" r="2.5" fill="#D4AF37" opacity=".6" />
+              <circle cx="100" cy="196" r="2.5" fill="#D4AF37" opacity=".6" />
+              <circle cx="4" cy="100" r="2.5" fill="#D4AF37" opacity=".6" />
             </svg>
           </div>
         </div>
@@ -152,7 +152,7 @@
 
 
   <!-- ══════════════════ SERVICES ══════════════════ -->
-  <section class="section-pad" aria-labelledby="services-heading" style="background:var(--bg-alt);">
+  <section class="section-pad specialities-section" aria-labelledby="services-heading" style="background:var(--bg-alt);">
     <div class="container">
       <div class="section-header reveal-up">
         <span class="eyebrow">What We Offer</span>
@@ -161,52 +161,60 @@
       </div>
 
       <div class="row g-4 stagger">
+        <!-- Service 1 -->
         <div class="col-md-6 col-lg-3 reveal-up">
-          <article class="card-astro text-center">
-            <div class="svc-media mx-auto">
-              <img src="https://images.unsplash.com/photo-1532968787238-51611422cb5b?w=640&h=480&fit=crop&q=80"
-                alt="Colorful zodiac globe with astrology symbols" loading="lazy" crossorigin="anonymous">
+          <article class="card-astro p-0 d-flex flex-column" style="background:var(--bg);">
+            <div style="height:180px; background:url('https://images.unsplash.com/photo-1532968787238-51611422cb5b?w=640&h=480&fit=crop&q=80') center/cover; position:relative;" aria-hidden="true">
+               <div style="position:absolute; inset:0; background:linear-gradient(180deg, transparent 50%, var(--bg) 100%);"></div>
             </div>
-            <h3 class="h5 h-font mb-2">Birth Chart Report</h3>
-            <p class="text-muted small mb-4">A 60-page PDF mapping planetary positions at your exact birth moment.</p>
-            <a href="services.html#birth-chart" class="btn-ghost"
-              style="font-size:.8rem; padding:9px 20px; text-decoration:none;">Learn More</a>
+            <div class="p-4 d-flex flex-column flex-grow-1 text-center" style="position:relative; z-index:2; margin-top:-30px;">
+              <div class="svc-icon mx-auto rounded-circle mb-3" style="background:var(--accent-dim); border:1px solid rgba(212,175,55,.25); width:60px; height:60px; line-height:58px;"><i class="bi bi-compass"></i></div>
+              <h3 class="h-font h5 mb-3">Birth Chart Report</h3>
+              <p class="small text-muted flex-grow-1">A 60-page PDF mapping planetary positions at your exact birth moment.</p>
+              <a href="services.html#birth-chart" class="text-accent fw-bold text-decoration-none mt-4 d-inline-flex align-items-center justify-content-center gap-2" style="font-size:.85rem; letter-spacing:.05em;">LEARN MORE <i class="bi bi-arrow-right"></i></a>
+            </div>
           </article>
         </div>
+        <!-- Service 2 -->
         <div class="col-md-6 col-lg-3 reveal-up">
-          <article class="card-astro text-center">
-            <div class="svc-media mx-auto">
-              <img src="https://images.unsplash.com/photo-1765248230965-97b97785fed6?w=640&h=480&fit=crop&q=80"
-                alt="A couple looking at each other during a romantic evening" loading="lazy" crossorigin="anonymous">
+          <article class="card-astro p-0 d-flex flex-column" style="background:var(--bg);">
+            <div style="height:180px; background:url('https://images.unsplash.com/photo-1765248230965-97b97785fed6?w=640&h=480&fit=crop&q=80') center/cover; position:relative;" aria-hidden="true">
+               <div style="position:absolute; inset:0; background:linear-gradient(180deg, transparent 50%, var(--bg) 100%);"></div>
             </div>
-            <h3 class="h5 h-font mb-2">Compatibility Report</h3>
-            <p class="text-muted small mb-4">Deep synastry analysis comparing two birth charts for cosmic harmony.</p>
-            <a href="services.html#compatibility" class="btn-ghost"
-              style="font-size:.8rem; padding:9px 20px; text-decoration:none;">Learn More</a>
+            <div class="p-4 d-flex flex-column flex-grow-1 text-center" style="position:relative; z-index:2; margin-top:-30px;">
+              <div class="svc-icon mx-auto rounded-circle mb-3" style="background:var(--accent-dim); border:1px solid rgba(212,175,55,.25); width:60px; height:60px; line-height:58px;"><i class="bi bi-infinity"></i></div>
+              <h3 class="h-font h5 mb-3">Compatibility Report</h3>
+              <p class="small text-muted flex-grow-1">Deep synastry analysis comparing two birth charts for cosmic harmony.</p>
+              <a href="services.html#compatibility" class="text-accent fw-bold text-decoration-none mt-4 d-inline-flex align-items-center justify-content-center gap-2" style="font-size:.85rem; letter-spacing:.05em;">LEARN MORE <i class="bi bi-arrow-right"></i></a>
+            </div>
           </article>
         </div>
+        <!-- Service 3 -->
         <div class="col-md-6 col-lg-3 reveal-up">
-          <article class="card-astro text-center">
-            <div class="svc-media mx-auto">
-              <img src="https://images.unsplash.com/photo-1677029907981-e9a44fb7409a?w=640&h=480&fit=crop&q=80"
-                alt="Purple and blue cosmic sky for horoscope readings" loading="lazy" crossorigin="anonymous">
+          <article class="card-astro p-0 d-flex flex-column" style="background:var(--bg);">
+            <div style="height:180px; background:url('https://images.unsplash.com/photo-1677029907981-e9a44fb7409a?w=640&h=480&fit=crop&q=80') center/cover; position:relative;" aria-hidden="true">
+               <div style="position:absolute; inset:0; background:linear-gradient(180deg, transparent 50%, var(--bg) 100%);"></div>
             </div>
-            <h3 class="h5 h-font mb-2">Horoscope Readings</h3>
-            <p class="text-muted small mb-4">Daily, weekly, and yearly transit forecasts based on your sign.</p>
-            <a href="services.html#horoscope" class="btn-ghost"
-              style="font-size:.8rem; padding:9px 20px; text-decoration:none;">Learn More</a>
+            <div class="p-4 d-flex flex-column flex-grow-1 text-center" style="position:relative; z-index:2; margin-top:-30px;">
+              <div class="svc-icon mx-auto rounded-circle mb-3" style="background:var(--accent-dim); border:1px solid rgba(212,175,55,.25); width:60px; height:60px; line-height:58px;"><i class="bi bi-moon-stars"></i></div>
+              <h3 class="h-font h5 mb-3">Horoscope Readings</h3>
+              <p class="small text-muted flex-grow-1">Daily, weekly, and yearly transit forecasts based on your zodiac sign.</p>
+              <a href="services.html#horoscope" class="text-accent fw-bold text-decoration-none mt-4 d-inline-flex align-items-center justify-content-center gap-2" style="font-size:.85rem; letter-spacing:.05em;">LEARN MORE <i class="bi bi-arrow-right"></i></a>
+            </div>
           </article>
         </div>
+        <!-- Service 4 -->
         <div class="col-md-6 col-lg-3 reveal-up">
-          <article class="card-astro text-center">
-            <div class="svc-media mx-auto">
-              <img src="https://images.unsplash.com/photo-1758691462749-a95ce1bd7f96?w=640&h=480&fit=crop&q=80"
-                alt="Online consultation happening over a laptop video call" loading="lazy" crossorigin="anonymous">
+          <article class="card-astro p-0 d-flex flex-column" style="background:var(--bg);">
+            <div style="height:180px; background:url('https://images.unsplash.com/photo-1758691462749-a95ce1bd7f96?w=640&h=480&fit=crop&q=80') center/cover; position:relative;" aria-hidden="true">
+               <div style="position:absolute; inset:0; background:linear-gradient(180deg, transparent 50%, var(--bg) 100%);"></div>
             </div>
-            <h3 class="h5 h-font mb-2">Live Consultation</h3>
-            <p class="text-muted small mb-4">One-on-one 60-minute video session for direct spiritual guidance.</p>
-            <a href="book-consultation.html" class="btn-ghost"
-              style="font-size:.8rem; padding:9px 20px; text-decoration:none;">Book Now</a>
+            <div class="p-4 d-flex flex-column flex-grow-1 text-center" style="position:relative; z-index:2; margin-top:-30px;">
+              <div class="svc-icon mx-auto rounded-circle mb-3" style="background:var(--accent-dim); border:1px solid rgba(212,175,55,.25); width:60px; height:60px; line-height:58px;"><i class="bi bi-camera-video"></i></div>
+              <h3 class="h-font h5 mb-3">Live Consultation</h3>
+              <p class="small text-muted flex-grow-1">One-on-one 60-minute video session for direct spiritual guidance.</p>
+              <a href="book-consultation.html" class="text-accent fw-bold text-decoration-none mt-4 d-inline-flex align-items-center justify-content-center gap-2" style="font-size:.85rem; letter-spacing:.05em;">BOOK NOW <i class="bi bi-calendar-check"></i></a>
+            </div>
           </article>
         </div>
       </div>
@@ -363,7 +371,7 @@
             <p class="testi-text">"The birth chart session completely reshaped how I view my career. The timing
               suggestions were eerily accurate."</p>
             <div class="testi-author">
-              <img src="https://ui-avatars.com/api/?name=Sarah+J&background=C9A96E&color=fff&size=80" alt="Sarah J.">
+              <img src="https://ui-avatars.com/api/?name=Sarah+J&background=D4AF37&color=fff&size=80" alt="Sarah J.">
               <div><span class="name">Sarah J.</span><span class="role d-block">Entrepreneur, New York</span></div>
             </div>
           </div>
@@ -378,7 +386,7 @@
             <p class="testi-text">"Our compatibility report revealed patterns in our relationship that we'd never been
               able to articulate. Truly remarkable."</p>
             <div class="testi-author">
-              <img src="https://ui-avatars.com/api/?name=Marcus+R&background=C9A96E&color=0B0F14&size=80"
+              <img src="https://ui-avatars.com/api/?name=Marcus+R&background=D4AF37&color=0B0F14&size=80"
                 alt="Marcus R.">
               <div><span class="name">Marcus R.</span><span class="role d-block">Architect, London</span></div>
             </div>
@@ -394,7 +402,7 @@
             <p class="testi-text">"I was skeptical, but after the Dasha-period analysis hit home, I became a believer.
               Scheduled my second session already."</p>
             <div class="testi-author">
-              <img src="https://ui-avatars.com/api/?name=Priya+M&background=C9A96E&color=0B0F14&size=80" alt="Priya M.">
+              <img src="https://ui-avatars.com/api/?name=Priya+M&background=D4AF37&color=0B0F14&size=80" alt="Priya M.">
               <div><span class="name">Priya M.</span><span class="role d-block">Doctor, Mumbai</span></div>
             </div>
           </div>
@@ -408,7 +416,7 @@
             </div>
             <p class="testi-text">"The reading helped me make a major career decision with confidence. It felt practical, clear, and deeply reassuring properly."</p>
             <div class="testi-author">
-              <img src="https://ui-avatars.com/api/?name=Arjun+S&background=C9A96E&color=0B0F14&size=80" alt="Arjun S.">
+              <img src="https://ui-avatars.com/api/?name=Arjun+S&background=D4AF37&color=0B0F14&size=80" alt="Arjun S.">
               <div><span class="name">Arjun S.</span><span class="role d-block">Designer, Delhi</span></div>
             </div>
           </div>
@@ -422,7 +430,7 @@
     <div class="cta-glow" aria-hidden="true"></div>
     <div class="container position-relative" style="z-index:1;">
       <div class="reveal-up">
-        <span class="eyebrow" style="color:rgba(201,169,110,.8);">Begin Your Journey</span>
+        <span class="eyebrow" style="color:rgba(212,175,55,.8);">Begin Your Journey</span>
         <h2 id="cta-heading" class="display-5 fw-bold text-white mt-3 mb-4">
           Ready to Explore<br>Your Destiny?
         </h2>
